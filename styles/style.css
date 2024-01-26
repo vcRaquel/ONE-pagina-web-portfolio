@@ -1,14 +1,5 @@
-/* Sempre que criar um arquivo CSS é importante lembrar de linkar ele com o arquivo HTM no head */
-
-/* colocar os elementos na ordem que aparecem no HTML */
-
-/* Para importar fontes vai no google fonts pesquisa a fonte, seleciona, verifica o style, 
-clica no botão do lado do style escolhido no lado direito procura Use on the web, seleciona @import, 
-copia o que está entre as tags style e cola aqui*/
 @import url('https://fonts.googleapis.com/css2?family=Krona+One&family=Montserrat:wght@400;600&display=swap');
 
-/* criamos variáveis no CSS para armazenar cores que se repetem por exemplo --nome: #hexadecimal
-para usar o valor da variável: var(--nome)*/
 :root{
     --cor-primaria: #000000;
     --cor-secundaria: #F6F6F6;
@@ -20,29 +11,26 @@ para usar o valor da variável: var(--nome)*/
     --fonte-secundaria: 'Montserrat', sans-serif;
 }
 
-/* * para selecionar todos os elementos, usado para resetar as configurações de estilo padrão */
 *{
     margin: 0;
     padding: 0;
 }
-/* área do body relacionada à tag homônima no HTML */
+
 body{
-    /* para que os elementos filhos não saiam do elemento pai (body) */
     box-sizing: border-box;
-    /* cor do plano de fundo */
     background-color: var(--cor-primaria);
-    /* cor do texto */
     color: var(--cor-secundaria);
 }
-/* para estilizar uma outra tag a declaramos e {} mesmo que ela esteja dentro do body*/
+
 .cabecalho{
-    /* se a propriedade tiver 4 valores top direita baixo esquerda em % para responsividade */
     padding: 2% 0% 0% 15%;
 }
+
 .cabecalho__menu{
     display: flex;
     gap: 80px;
 }
+
 .cabecalho__menu__link{
     font-family: var(--fonte-secundaria);
     font-size: 24px;
@@ -50,6 +38,7 @@ body{
     color: var(--cor-terciaria);
     text-decoration: none;
 }
+
 .cabecalho__menu__link:hover{
     color: var(--cor-hover-cabecalho-menu-link);
 }
@@ -57,100 +46,75 @@ body{
 .texto-destaque{
     color: var(--cor-terciaria);
 }
+
 .apresentacao{
-    /* para aplicar um espaçamento do conteúdo em relação a margem dele | - */
     padding: 5% 15%;
-    /* usado para aplicar o flex box que por padrão coloca os elementos filho em linha */
     display: flex;
-    /* para alinhar os itens filhos, 
-    no caso de maneira centralizada em relação a eles mesmos (no caso, no meio da imagem) */
     align-items: center;
-    /* para justificar o conteúdo e adequar o espaçamento entre os elementos, no caso de maneira igual */
     justify-content: space-between;
 }
+
 .apresentacao__conteudo{
-    /* para definir um valor pra largura no figma: w */
     width: 615px;
-    /* vai receber a estilização do flex por ser a classe container 
-    dos elementos titulo, texto e section (links) */
     display: flex;
-    /* como o padrão do flex box é em linha, mudamos a visualização com o direction na forma de coluna */
     flex-direction: column;
-    /* para criar o espaçamento entre os elementos da classe container 
-    A propriedade gap não é exclusiva do Flexbox, porém é utilizada quase sempre em conjunto com ele. 
-    Ela especifica no CSS o tamanho dos espaços entre linhas e colunas em layouts de grid, flex 
-    e multi-column. Sua sintaxe é bem simples e ela aceita um ou dois valores. Quando dois valores são 
-    usados, o primeiro define the row-gape (vertical |) o segundo define o column-gap (horizontal -).*/
     gap: 40px;
 }
+
 .apresentacao__conteudo__titulo{
-    /* para definir o tamanho da fonte */
     font-size: 36px;
-    /* para aplicar a fonte importada no google fonts abaixo de onde copiamos o código pra importar 
-    vai ter a seção CSS rules to specify families que traz como usar a fonte no CSS*/
     font-family: var(--fonte-principal);
 
 }
+
 .titulo-destaque{
     color: var(--cor-terciaria);
 }
+
 .apresentacao__conteudo__texto{
     font-size: 24px;
     font-family: var(--fonte-secundaria);
 }
+
 .apresentacao__conteudo__texto a{
     text-decoration: none;
     color: var(--cor-terciaria);
 }
+
 .apresentacao__conteudo__links{
     display: flex;
-    /* para mudar a direction flex na direção padrão de row (linha) */
     flex-direction: column;
-    /* alinhar os elementos verticalmente pois o eixo mudou por conta do flex-direction column */
     align-items: center;
     justify-content: space-between;
-    /* para criar o espaçamento entre os elementos da classe container */
     gap: 32px;
 }
+
 .apresentacao__conteudo__links__subtitulo{
     font-family: var(--fonte-principal);
     font-weight: 400;
     font-size: 24px;
 }
+
 .apresentacao__conteudo__links__link{
-    /* para poder alinhar os elementos dentro das tags a */
     display: flex;
-    /* para trazer os elementos filhos pro centro */
     justify-content: center;
-    /* para espaçar os elementos filhos entre eles */
     gap: 16px;
-    /* borda: espessura, nitidez do tracejado, cor */
     border: 2px solid var(--cor-terciaria);
-    /* largura */
     width: 378px;
-    /* para centralizar o texto */
     text-align: center;
-    /* arredondamento da borda */
     border-radius: 8px;
-    /* tamanho da fonte */
     font-size: 24px;
-    /* família da fonte */
     font-family: var(--fonte-secundaria);
-    /* peso da fonte */
     font-weight: 600;
-    /* espaço entre o conteúdo e a borda 
-    o primeiro valor vai ser do eixo vertical | e o segundo do eixo horizontal - */
     padding: 21.5px 0;
-    /* para tirar o sublinhado que vem por padrão no link e que é uma decoração */
     text-decoration: none;
-    /* cor do texto dos botões que estão na div */
     color: var(--cor-secundaria);
 }
-/* efeito de destaque quando passa o mouse por cima do elemento (hover) classe da tag a:hover{} 
-é como se fosse um estilo alternativo e por isso fica fora da estilização oficial*/
+
 .apresentacao__conteudo__links__link:hover{
     background-color: var(--cor-hover-apresentacao-conteudo-links-link);
 }
+
 .rodape{
     padding: 24px;
     background-color: var(--cor-terciaria);

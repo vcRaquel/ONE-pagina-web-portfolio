@@ -1,50 +1,27 @@
 <!DOCTYPE html>
-<!-- lang vai dizer qual a língua utilizada, no caso pt-br é abreviação de português do Brasil -->
 <html lang="pt-br">
 <head>
-    <!-- charset="UTF-8" é sobre a codificação dos caracteres usados, inclusive os especiais (unicode) -->
     <meta charset="UTF-8">
-    <!-- configuração pro edge para usar a versão mais recente nesse navegador específicamente
-    é importante independente do desenvolvedor não usar o edge, pois o usuário poderá usar este navegador -->
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
-    <!--viewport é o dispositivo que vai estar acessando a página (notebook, ipad, celular), 
-        pega a largura desse dispositivo pra criar a escala da página que está descrita no content, 
-        no caso como 1.0-->
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Portfolio</title>
-    <!-- tag usada para linkar o CSS com o HTML, 
-    proprielade rel vai dizer a relação entre os documentos (stylesheet = folha de estilo)
-    href vai referenciar onde está essa folha de estilo (endereço do arquivo css)-->
     <link rel="stylesheet" href="./styles/style.css">
 </head>
 <body>
-    <!-- parte de cima da página -->
     <header class="cabecalho">
-        <!-- tag para inserir os links para navegar na página -->
         <nav class="cabecalho__menu">
             <a class="cabecalho__menu__link" href="index.html">Home</a>
             <a class="cabecalho__menu__link" href="about.html">Sobre mim</a>
             <a class="cabecalho__menu__link" href="curriculo.html">Currículo</a>
         </nav>
     </header>
-    <!-- conteúdo principal da página 
-    nele se coloca os elementos da página como título, parágrafo, botões, etc-->
-    <!-- no main colocamos a class para poder usar o flex box nos elementos filhos-->
     <main class="apresentacao">
-        <!-- Para separar os elementos em uma seção, usamos a tag section e usamos a classe para poder estilizar
-        para nomenclatura usamos o nome do pai __ nome desse modo facilita a identificação para manutenção-->
         <section class="apresentacao__conteudo">
-            <!-- a tag strong vai destacar o trecho do texto, a propriedade class vai identificar a strong -->
             <h1 class="apresentacao__conteudo__titulo">Eleve seu negócio digital a outro nível <strong class="titulo-destaque">com um Front-end de qualidade!</strong></h1>
             <p class="apresentacao__conteudo__texto">Olá! Sou Raquel Leão, desenvolvedora Front-end com especialidade em, <strong class="texto-destaque"> HTML e CSS</strong>. 
                 Ajudo pequenos negócios e designers a colocarem em prática boas ideias. Vamos conversar?</p>
-            <!-- tag div é usada para fazer uma divisão e poder aplicar o estilo àquela parte do código 
-            em uma área do código que não tem contexto semântico como o main ou a section-->
             <div class="apresentacao__conteudo__links">
-                <!-- subtítulo -->
                 <h2 class="apresentacao__conteudo__links__subtitulo">Acesse minhas redes:</h2>
-                <!-- embora pareça um botão, está direcionando para outro lugar (instagram e Github)
-                por isso, semanticamente usamos a tag <a> de ancoragem para ancorar o endereço (href) ao click -->
                 <a class="apresentacao__conteudo__links__link" href="https://github.com/vcRaquel">
                     <img src="./assets/github.png">GitHub
                 </a>
@@ -57,10 +34,8 @@
                 
             </div>
         </section>
-        <!-- ./ usado para referenciar uma pasta dentro do projeto -->
         <img src="./assets/imagem.png" alt="Foto de uma mulher programando">
     </main>
-    <!-- rodapé da página -->
     <footer class="rodape">
         <p>Desenvolvido por Alura.</p>
     </footer>
