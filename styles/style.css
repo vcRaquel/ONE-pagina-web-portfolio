@@ -23,6 +23,7 @@ body{
 }
 
 .cabecalho{
+    /*% é porcentagem em relação à tag pai */
     padding: 2% 0% 0% 15%;
 }
 
@@ -33,7 +34,8 @@ body{
 
 .cabecalho__menu__link{
     font-family: var(--fonte-secundaria);
-    font-size: 24px;
+    /* 24px/16 = 1.5rem */
+    font-size: 1.5rem;
     font-weight: 600;
     color: var(--cor-terciaria);
     text-decoration: none;
@@ -48,6 +50,9 @@ body{
 }
 
 .apresentacao{
+    /* adicionamos um gap pra garantir que na responsividade os elementos continuem 
+    tendo espaço entre eles */
+    gap: 82px;
     padding: 5% 15%;
     display: flex;
     align-items: center;
@@ -55,14 +60,21 @@ body{
 }
 
 .apresentacao__conteudo{
-    width: 615px;
+    /* tínhamos a largura fixa em 615px e por isso não estava responsivo 
+    passamos para 50% em conformidade com a visualização meio a meio em relação à imagem*/
+    width: 50%;
     display: flex;
     flex-direction: column;
     gap: 40px;
 }
 
 .apresentacao__conteudo__titulo{
-    font-size: 36px;
+    /* px não é uma unidade de medida responsiva e 
+    por isso não é recomendado utilizar como valor pois irá chumbar o estilo 
+    por isso vamos usar rem para transformar de px pra rem usamos a escala de 16px = 1rem
+    potanto pegamos o valor de px e dividimos por 16 pra encontrar o equivalente em rem
+    px/16 = rem no caso 36/16 = 2.25*/
+    font-size: 2.25rem;
     font-family: var(--fonte-principal);
 
 }
@@ -72,7 +84,8 @@ body{
 }
 
 .apresentacao__conteudo__texto{
-    font-size: 24px;
+    /* 24px/16 = 1.5rem */
+    font-size: 1.5rem;
     font-family: var(--fonte-secundaria);
 }
 
@@ -92,18 +105,21 @@ body{
 .apresentacao__conteudo__links__subtitulo{
     font-family: var(--fonte-principal);
     font-weight: 400;
-    font-size: 24px;
+    /* 24px/16 = 1.5rem */
+    font-size: 1.5rem;
 }
 
-.apresentacao__conteudo__links__link{
+.apresentacao__conteudo__links__navegacao{
     display: flex;
     justify-content: center;
     gap: 16px;
     border: 2px solid var(--cor-terciaria);
-    width: 378px;
+    /* trocamos a largura de 378px */
+    width: 50%;
     text-align: center;
     border-radius: 8px;
-    font-size: 24px;
+    /* 24px/16 = 1.5rem */
+    font-size: 1.5rem;
     font-family: var(--fonte-secundaria);
     font-weight: 600;
     padding: 21.5px 0;
@@ -115,12 +131,52 @@ body{
     background-color: var(--cor-hover-apresentacao-conteudo-links-link);
 }
 
+.apresentacao__imagem{
+    /* Largura em porcentagem do elemento pai = % 
+    mudando a largura, vai mudar a altura de modo automático acompanhando a escala da imagem*/
+    width: 50%;
+
+}
+
 .rodape{
     padding: 24px;
     background-color: var(--cor-terciaria);
     color: var(--cor-primaria);
     text-align: center;
     font-family: var(--fonte-secundaria);
-    font-size: 24px;
+    /* 24px/16 = 1.5rem */
+    font-size: 1.5rem;
     font-weight: 400;
 }
+
+/* usamos essa propriedade pra criar um estilo alternativo para os casos em que a tela 
+tenha o tamanho menor do que o especificado, usado por exemplo para criar o estilo usado em mobile
+@media(condição, como tamanho máximo de tela por ex){faça o que tá na chave} */
+ @media(max-width:1200px){
+    .cabecalho{
+        /* espaçamento de cima (na verdade aplicado pra todos os lados, mas o orientador foi o espaço de cima */
+        padding: 10%;
+    }
+
+    .cabecalho__menu{
+        /*não precisa declarar o display flex pois já foi declarado fora do media pra essa propriedade
+        no media colocamos apenas as modificações  */
+        /* para alinhar no centro */
+        justify-content: center;
+    }
+
+    .apresentacao{
+        /* usamos o column pra mudar a disposição de linha pra coluna e trazer a imagem pro eixo do texto 
+        fazendo apenas isso, a imagem ficaria embaixo por conta da ordem de declaração do HTML 
+        que é respeitando o design de visualização web. 
+        Pra inverter a ordem dos elementos e levar a imagem pra cima, usamos o reverse no column*/
+        flex-direction: column-reverse;
+        padding: 5%;
+    }
+
+    .apresentacao__conteudo{
+        /* dizer pra usar todo o espaço do padding do elemento apresentação usamos auto (100%) */
+        width: auto;
+    }
+    
+ }
